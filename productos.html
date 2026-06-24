@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos y Sesiones | Tattoo Fest Eureka</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tienda.css">
+    <link rel="stylesheet" href="carrito.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html" id="logoLink">
+                <img src="images/LOGO EUREKA VECTOR.png" alt="Eureka Studio" class="logo-animado">
+            </a>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html#hero" class="nav-index-link">Inicio</a></li>
+                <li><a href="index.html#agenda" class="nav-index-link">Agenda</a></li>
+                <li><a href="index.html#artistas-invitados" class="nav-index-link">Artistas Invitados</a></li>
+                <li><a href="productos.html" class="active-link">Tienda</a></li>
+                <li><a href="tienda.html">Entradas VIP</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions-mobile">
+            <div class="carrito-icono-wrapper" id="carritoIcono">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="carrito-contador" id="carritoContador">0</span>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="tienda-main">
+
+        <section class="catalogo-section" id="merch">
+            <div class="section-heading">
+                <p class="italic-subtitle">Llevate algo de</p>
+                <h2 class="section-title">MERCHANDISING</h2>
+                <p class="section-desc">Productos oficiales de la convención, edición limitada.</p>
+            </div>
+
+            <div class="catalogo-grid">
+
+                <article class="catalogo-card">
+                    <div class="catalogo-img-wrapper">
+                        <img src="images/remera.jpg" alt="Remera Eureka Studio" class="catalogo-img">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3 class="catalogo-nombre">Remera Eureka Studio</h3>
+                        <p class="catalogo-desc">100% algodón, estampado serigrafiado. Talles S a XXL.</p>
+                        <div class="catalogo-footer">
+                            <span class="catalogo-precio">$12.000</span>
+                            <button class="btn-comprar" data-nombre="Remera Eureka Studio" data-precio="12000">AGREGAR AL CARRITO</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-img-wrapper">
+                        <img src="images/stickers.jpg" alt="Pack de Stickers Eureka" class="catalogo-img">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3 class="catalogo-nombre">Pack de Stickers</h3>
+                        <p class="catalogo-desc">Set de 10 stickers con diseños de los artistas invitados.</p>
+                        <div class="catalogo-footer">
+                            <span class="catalogo-precio">$3.500</span>
+                            <button class="btn-comprar" data-nombre="Pack de Stickers" data-precio="3500">AGREGAR AL CARRITO</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-img-wrapper">
+                        <img src="images/flash-sheet.jpg" alt="Flash Sheet Impreso" class="catalogo-img">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3 class="catalogo-nombre">Flash Sheet Impreso</h3>
+                        <p class="catalogo-desc">Lámina A3 con diseños exclusivos de la convención.</p>
+                        <div class="catalogo-footer">
+                            <span class="catalogo-precio">$5.000</span>
+                            <button class="btn-comprar" data-nombre="Flash Sheet Impreso" data-precio="5000">AGREGAR AL CARRITO</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="catalogo-section catalogo-alt" id="sesiones">
+            <div class="section-heading">
+                <p class="italic-subtitle">Reservá tu lugar para</p>
+                <h2 class="section-title">SESIONES DE TATUAJE</h2>
+                <p class="section-desc">Turnos con nuestros artistas invitados durante la convención. Precios desde, sujetos a tamaño y complejidad.</p>
+            </div>
+
+            <div class="catalogo-grid">
+
+                <article class="catalogo-card">
+                    <div class="catalogo-img-wrapper">
+                        <img src="images/turno-flash.jpg" alt="Turno Flash" class="catalogo-img">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3 class="catalogo-nombre">Turno Flash</h3>
+                        <p class="catalogo-desc">Diseño chico ya hecho, sin cita previa. Ideal para tu primer tattoo.</p>
+                        <div class="catalogo-footer">
+                            <span class="catalogo-precio">Desde $20.000</span>
+                            <button class="btn-comprar" data-nombre="Turno Flash" data-precio="20000">AGREGAR AL CARRITO</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-img-wrapper">
+                        <img src="images/turno-personalizado.jpg" alt="Turno Personalizado" class="catalogo-img">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3 class="catalogo-nombre">Turno Personalizado</h3>
+                        <p class="catalogo-desc">Diseño a medida junto al artista. Incluye boceto previo.</p>
+                        <div class="catalogo-footer">
+                            <span class="catalogo-precio">Desde $45.000</span>
+                            <button class="btn-comprar" data-nombre="Turno Personalizado" data-precio="45000">AGREGAR AL CARRITO</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="catalogo-card">
+                    <div class="catalogo-img-wrapper">
+                        <img src="images/turno-coverup.jpg" alt="Turno Cover-up" class="catalogo-img">
+                    </div>
+                    <div class="catalogo-info">
+                        <h3 class="catalogo-nombre">Turno Cover-up</h3>
+                        <p class="catalogo-desc">Transformación de tatuajes existentes. Requiere evaluación previa.</p>
+                        <div class="catalogo-footer">
+                            <span class="catalogo-precio">Desde $60.000</span>
+                            <button class="btn-comprar" data-nombre="Turno Cover-up" data-precio="60000">AGREGAR AL CARRITO</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="banner-entradas">
+            <div class="banner-content">
+                <h3>¿Todavía no tenés tu entrada?</h3>
+                <p>Asegurá tu acceso a la convención antes de que se agoten los cupos.</p>
+                <a href="tienda.html" class="btn-outline">VER ENTRADAS</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <img src="images/LOGO EUREKA VECTOR.png" alt="Eureka Studio" class="footer-logo-img">
+            <p class="copyright">Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <div class="carrito-overlay" id="carritoOverlay"></div>
+
+    <aside class="carrito-drawer" id="carritoDrawer">
+        <div class="carrito-header">
+            <h3>Tu Carrito</h3>
+            <button class="carrito-cerrar" id="carritoCerrar" aria-label="Cerrar carrito">✕</button>
+        </div>
+        <div class="carrito-lista" id="carritoLista"></div>
+        <div class="carrito-vacio" id="carritoVacio">
+            <div class="carrito-vacio-icono">🛒</div>
+            <p>Todavía no agregaste nada al carrito.</p>
+        </div>
+        <div class="carrito-footer" id="carritoFooter">
+            <div class="carrito-total-row">
+                <span class="carrito-total-label">Total</span>
+                <span class="carrito-total-precio" id="carritoTotal">$0</span>
+            </div>
+            <a href="tienda.html?desde=carrito" class="carrito-btn-finalizar">FINALIZAR COMPRA</a>
+        </div>
+    </aside>
+
+    <!-- carrito.js PRIMERO — define agregarAlCarrito y todo el motor -->
+    <script src="carrito.js"></script>
+
+    <!-- productos.js SEGUNDO — usa agregarAlCarrito -->
+    <script src="productos.js"></script>
+
+    <!-- script inline AL FINAL — solo maneja nav y scroll, NO toca los botones -->
+    <script>
+        // Menú hamburguesa — solo sobre el toggle, no sobre todos los links
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.main-nav');
+
+        if (toggle && nav) {
+            toggle.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                toggle.classList.toggle('active');
+            });
+        }
+
+        // Cerrar menú al clickear un link de nav (solo los del nav, no botones)
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                toggle.classList.remove('active');
+            });
+        });
+
+        // Links que van a index.html#seccion → guardar ancla y navegar
+        document.querySelectorAll('.nav-index-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const hash = link.getAttribute('href').split('#')[1];
+                sessionStorage.setItem('scrollTo', hash);
+                window.location.href = 'index.html';
+            });
+        });
+
+        // Logo → ir al inicio
+        document.getElementById('logoLink').addEventListener('click', (e) => {
+            e.preventDefault();
+            sessionStorage.setItem('scrollTo', 'hero');
+            window.location.href = 'index.html';
+        });
+    </script>
+
+</body>
+</html>

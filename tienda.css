@@ -1,0 +1,741 @@
+/* =========================================
+   TIENDA — HERO
+========================================= */
+.tienda-main {
+    padding-top: 7rem; /* espacio para el header fijo */
+}
+
+.tienda-hero {
+    text-align: center;
+    padding: 2rem 1.5rem 3rem;
+}
+
+.tienda-hero-desc {
+    color: var(--text-secondary);
+    max-width: 550px;
+    margin: 1rem auto 0;
+    font-size: 0.9rem;
+}
+
+.active-link {
+    color: #8e0101 !important;
+}
+
+/* =========================================
+   INDICADOR DE PASOS (CHECKOUT STEPS)
+========================================= */
+.checkout-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    padding: 0 1.5rem;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.step.active,
+.step.completed {
+    opacity: 1;
+}
+
+.step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.step.active .step-number {
+    border-color: #8e0101;
+    background-color: #8e0101;
+    color: #fff;
+}
+
+.step.completed .step-number {
+    border-color: #8e0101;
+    color: #8e0101;
+}
+
+.step-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.step-line {
+    flex: 1;
+    height: 1px;
+    background-color: var(--accent-color);
+    max-width: 60px;
+}
+
+/* =========================================
+   PANTALLAS DE CHECKOUT (show/hide)
+========================================= */
+.checkout-screen {
+    display: none;
+    padding: 0 1.5rem 5rem;
+    animation: fadeInScreen 0.4s ease;
+}
+
+.checkout-screen.active {
+    display: block;
+}
+
+@keyframes fadeInScreen {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   GRILLA DE PRODUCTOS (ENTRADAS)
+========================================= */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.producto-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-8px);
+    border-color: #8e0101;
+}
+
+.producto-card.destacado {
+    border-color: #8e0101;
+    position: relative;
+    transform: scale(1.05);
+}
+
+.producto-card.destacado:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+
+.producto-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.tag-vip {
+    color: #8e0101;
+    font-weight: bold;
+}
+
+.producto-nombre {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.producto-precio {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.producto-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.producto-features li {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
+    padding-left: 1.3rem;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.producto-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #8e0101;
+}
+
+.btn-seleccionar {
+    width: 100%;
+}
+
+/* =========================================
+   FORMULARIOS DE CHECKOUT (datos / pago)
+========================================= */
+.checkout-form-wrapper {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.resumen-compra {
+    background-color: var(--bg-surface);
+    border-left: 2px solid #8e0101;
+    padding: 1.5rem 2rem;
+    height: fit-content;
+}
+
+.resumen-compra h4 {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.resumen-compra p {
+    font-size: 1rem;
+}
+
+.resumen-precio {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #8e0101;
+    margin-top: 0.5rem;
+}
+
+.form-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.metodos-pago {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.metodo-pago-option {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: border-color 0.3s ease;
+}
+
+.metodo-pago-option:has(input:checked) {
+    border-color: #8e0101;
+}
+
+.metodo-pago-option input {
+    accent-color: #8e0101;
+}
+
+.campos-tarjeta {
+    margin-top: 1.5rem;
+}
+
+.checkout-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.btn-volver {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-volver:hover {
+    color: #fff;
+}
+
+/* =========================================
+   CONFIRMACIÓN DE PEDIDO
+========================================= */
+.confirmacion-box {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--bg-surface);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+}
+
+.check-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #8e0101;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.confirmacion-texto {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 1rem 0 2rem;
+}
+
+.confirmacion-detalle {
+    text-align: left;
+    border-top: 1px solid var(--accent-color);
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.detalle-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.detalle-row span:first-child {
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   HISTORIAL DE ÓRDENES (tabla)
+========================================= */
+.historial-section {
+    padding: var(--spacing-section) 4rem;
+    background-color: var(--bg-surface);
+}
+
+.historial-tabla-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+.historial-tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.historial-tabla th {
+    text-align: left;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    padding: 1rem;
+    border-bottom: 2px solid #8e0101;
+}
+
+.historial-tabla td {
+    padding: 1.2rem 1rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.estado-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.estado-badge.pagado {
+    background-color: rgba(0, 150, 80, 0.15);
+    color: #2ecc71;
+}
+
+.estado-badge.pendiente {
+    background-color: rgba(200, 150, 0, 0.15);
+    color: #f1c40f;
+}
+
+/* =========================================
+   RESPONSIVE — TIENDA
+========================================= */
+@media (max-width: 1024px) {
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .producto-card.destacado {
+        transform: none;
+    }
+
+    .producto-card.destacado:hover {
+        transform: translateY(-8px);
+    }
+
+    .checkout-form-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-steps {
+        gap: 0.3rem;
+    }
+
+    .step-label {
+        display: none;
+    }
+
+    .step-line {
+        max-width: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .checkout-buttons {
+        flex-direction: column-reverse;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .checkout-buttons .btn-outline {
+        width: 100%;
+    }
+
+    /* Tabla responsive: se convierte en tarjetas apiladas */
+    .historial-tabla thead {
+        display: none;
+    }
+
+    .historial-tabla, 
+    .historial-tabla tbody, 
+    .historial-tabla tr, 
+    .historial-tabla td {
+        display: block;
+        width: 100%;
+    }
+
+    .historial-tabla tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--accent-color);
+        border-radius: 6px;
+        padding: 0.5rem 1rem;
+    }
+
+    .historial-tabla td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding: 0.8rem 0;
+    }
+
+    .historial-tabla td:last-child {
+        border-bottom: none;
+    }
+
+    .historial-tabla td::before {
+        content: attr(data-label);
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+    }
+
+    .historial-section {
+        padding: var(--spacing-section) 1.5rem;
+    }
+}
+
+/* =========================================
+   CATÁLOGO DE PRODUCTOS (productos.html)
+========================================= */
+.catalogo-section {
+    padding: var(--spacing-section) 4rem;
+}
+
+.catalogo-alt {
+    background-color: var(--bg-surface);
+}
+
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.catalogo-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.catalogo-alt .catalogo-card {
+    background-color: var(--bg-base);
+}
+
+.catalogo-card:hover {
+    transform: translateY(-6px);
+    border-color: #8e0101;
+}
+
+.catalogo-img-wrapper {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #8e0101;
+}
+
+.catalogo-img-placeholder {
+    font-size: 3.5rem;
+    opacity: 0.85;
+}
+
+.catalogo-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.catalogo-nombre {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+.catalogo-desc {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.catalogo-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.catalogo-precio {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.btn-comprar {
+    background: transparent;
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-comprar:hover {
+    background: #8e0101;
+    border-color: #8e0101;
+    color: #fff;
+}
+
+.btn-comprar.agregado {
+    background: #2ecc71;
+    border-color: #2ecc71;
+    color: #fff;
+}
+
+/* =========================================
+   BANNER HACIA ENTRADAS
+========================================= */
+.banner-entradas {
+    padding: 4rem;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+    border-top: 2px solid #8e0101;
+}
+
+.banner-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.banner-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.8rem;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   RESPONSIVE — CATÁLOGO
+========================================= */
+@media (max-width: 1024px) {
+    .catalogo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .catalogo-section {
+        padding: var(--spacing-section) 1.5rem;
+    }
+
+    .catalogo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalogo-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+
+    .btn-comprar {
+        width: 100%;
+    }
+
+    .banner-entradas {
+        padding: 3rem 1.5rem;
+    }
+}
+
+/* =========================================
+   RESUMEN DE PEDIDO MULTI-ÍTEM (pasos 2, 3 y confirmación)
+========================================= */
+.resumen-items {
+    margin: 0.5rem 0 1rem;
+}
+
+.resumen-item-fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.resumen-item-fila:last-child {
+    border-bottom: none;
+}
+
+.confirmacion-items {
+    margin: 0.5rem 0;
+}
+
+.confirmacion-items .detalle-row span:first-child {
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   BLOQUE "CONTINUAR CON MI PEDIDO" (debajo de las cards, paso 1)
+========================================= */
+.resumen-paso1-wrapper {
+    max-width: 500px;
+    margin: 3rem auto 0;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--bg-surface);
+    border-radius: 6px;
+    border: 1px solid var(--accent-color);
+}
+
+.resumen-paso1-texto {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .resumen-paso1-wrapper {
+        margin: 2rem 0 0;
+        padding: 1.5rem;
+    }
+}
+/* =========================================
+   IMÁGENES REALES EN CARDS DE CATÁLOGO
+   (reemplaza el placeholder con emoji)
+========================================= */
+.catalogo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.catalogo-card:hover .catalogo-img {
+    transform: scale(1.06);
+}

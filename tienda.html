@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entradas VIP | Tattoo Fest Eureka</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tienda.css">
+    <link rel="stylesheet" href="carrito.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html" id="logoLink">
+                <img src="images/LOGO EUREKA VECTOR.png" alt="Eureka Studio" class="logo-animado">
+            </a>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html#hero" class="nav-index-link">Inicio</a></li>
+                <li><a href="index.html#agenda" class="nav-index-link">Agenda</a></li>
+                <li><a href="index.html#artistas-invitados" class="nav-index-link">Artistas Invitados</a></li>
+                <li><a href="productos.html">Tienda</a></li>
+                <li><a href="tienda.html" class="active-link">Entradas VIP</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions-mobile">
+            <div class="carrito-icono-wrapper" id="carritoIcono">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="carrito-contador" id="carritoContador">0</span>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="tienda-main">
+
+        <section class="tienda-hero">
+            <div class="tienda-hero-content">
+                <p class="italic-subtitle">Asegurá tu lugar en</p>
+                <h1 class="section-title">TATTOO FEST EUREKA 2026</h1>
+                <p class="tienda-hero-desc">Elegí tu nivel de acceso y viví la convención desde adentro. Cupos limitados por categoría.</p>
+            </div>
+        </section>
+
+        <div class="checkout-steps" id="checkoutSteps">
+            <div class="step active" data-step="1">
+                <span class="step-number">1</span>
+                <span class="step-label">Entrada</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" data-step="2">
+                <span class="step-number">2</span>
+                <span class="step-label">Datos</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" data-step="3">
+                <span class="step-number">3</span>
+                <span class="step-label">Pago</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" data-step="4">
+                <span class="step-number">4</span>
+                <span class="step-label">Confirmación</span>
+            </div>
+        </div>
+
+        <section class="checkout-screen active" id="screen-1">
+            <div class="productos-grid">
+                <article class="producto-card" data-nombre="Entrada General" data-precio="15000">
+                    <div class="producto-tag">ACCESO BÁSICO</div>
+                    <h3 class="producto-nombre">General</h3>
+                    <p class="producto-precio">$15.000</p>
+                    <ul class="producto-features">
+                        <li>Acceso ambos días</li>
+                        <li>Acceso a galería de arte</li>
+                        <li>Acceso a Flash Day Contest</li>
+                    </ul>
+                    <button class="btn-outline btn-comprar" data-nombre="Entrada General" data-precio="15000">AGREGAR AL CARRITO</button>
+                </article>
+
+                <article class="producto-card destacado" data-nombre="Entrada VIP" data-precio="28000">
+                    <div class="producto-tag tag-vip">MÁS ELEGIDA</div>
+                    <h3 class="producto-nombre">VIP</h3>
+                    <p class="producto-precio">$28.000</p>
+                    <ul class="producto-features">
+                        <li>Todo lo de Entrada General</li>
+                        <li>Ingreso prioritario sin fila</li>
+                        <li>Acceso a seminarios técnicos</li>
+                        <li>Kit de merchandising Eureka</li>
+                    </ul>
+                    <button class="btn-outline btn-comprar" data-nombre="Entrada VIP" data-precio="28000">AGREGAR AL CARRITO</button>
+                </article>
+
+                <article class="producto-card" data-nombre="Entrada Backstage" data-precio="45000">
+                    <div class="producto-tag">EXPERIENCIA TOTAL</div>
+                    <h3 class="producto-nombre">Backstage</h3>
+                    <p class="producto-precio">$45.000</p>
+                    <ul class="producto-features">
+                        <li>Todo lo de Entrada VIP</li>
+                        <li>Meet & Greet con artistas</li>
+                        <li>Acceso a zona backstage</li>
+                        <li>Cupo prioritario para tatuarte en vivo</li>
+                    </ul>
+                    <button class="btn-outline btn-comprar" data-nombre="Entrada Backstage" data-precio="45000">AGREGAR AL CARRITO</button>
+                </article>
+            </div>
+
+            <div class="resumen-paso1-wrapper">
+                <p class="resumen-paso1-texto">¿Ya elegiste todo? Revisá tu carrito (ícono arriba a la derecha) y continuá con la compra.</p>
+                <button class="btn-outline" id="btnContinuarDesdeCarrito">CONTINUAR CON MI PEDIDO</button>
+            </div>
+        </section>
+
+        <section class="checkout-screen" id="screen-2">
+            <div class="checkout-form-wrapper">
+                <div class="resumen-compra">
+                    <h4>Tu pedido</h4>
+                    <div id="resumenItems" class="resumen-items"></div>
+                    <p class="resumen-precio" id="resumenPrecio">$0</p>
+                </div>
+
+                <form class="pro-form checkout-form" id="formDatos">
+                    <h3 class="form-subtitle">Datos personales</h3>
+                    <div class="input-group">
+                        <label for="nombreComprador">Nombre y apellido</label>
+                        <input type="text" id="nombreComprador" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="emailComprador">Correo electrónico</label>
+                        <input type="email" id="emailComprador" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="dniComprador">DNI</label>
+                        <input type="text" id="dniComprador" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="direccionComprador">Dirección</label>
+                        <input type="text" id="direccionComprador" required>
+                    </div>
+                    <div class="checkout-buttons">
+                        <button type="button" class="btn-volver" data-volver="1">VOLVER</button>
+                        <button type="submit" class="btn-outline">CONTINUAR</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="checkout-screen" id="screen-3">
+            <div class="checkout-form-wrapper">
+                <div class="resumen-compra">
+                    <h4>Tu pedido</h4>
+                    <div id="resumenItems2" class="resumen-items"></div>
+                    <p class="resumen-precio" id="resumenPrecio2">$0</p>
+                </div>
+
+                <form class="pro-form checkout-form" id="formPago">
+                    <h3 class="form-subtitle">Método de pago</h3>
+                    <div class="metodos-pago">
+                        <label class="metodo-pago-option">
+                            <input type="radio" name="metodoPago" value="tarjeta" checked>
+                            <span>Tarjeta de crédito / débito</span>
+                        </label>
+                        <label class="metodo-pago-option">
+                            <input type="radio" name="metodoPago" value="transferencia">
+                            <span>Transferencia bancaria</span>
+                        </label>
+                        <label class="metodo-pago-option">
+                            <input type="radio" name="metodoPago" value="mercadopago">
+                            <span>Mercado Pago</span>
+                        </label>
+                    </div>
+
+                    <div id="camposTarjeta" class="campos-tarjeta">
+                        <div class="input-group">
+                            <label for="numeroTarjeta">Número de tarjeta</label>
+                            <input type="text" id="numeroTarjeta" placeholder="0000 0000 0000 0000" maxlength="19">
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="vencimiento">Vencimiento</label>
+                                <input type="text" id="vencimiento" placeholder="MM/AA" maxlength="5">
+                            </div>
+                            <div class="input-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" placeholder="123" maxlength="3">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="nombreTarjeta">Nombre en la tarjeta</label>
+                            <input type="text" id="nombreTarjeta">
+                        </div>
+                    </div>
+
+                    <div class="checkout-buttons">
+                        <button type="button" class="btn-volver" data-volver="2">VOLVER</button>
+                        <button type="submit" class="btn-outline">CONFIRMAR PEDIDO</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="checkout-screen" id="screen-4">
+            <div class="confirmacion-box">
+                <div class="check-icon">✓</div>
+                <h2 class="section-title">¡PEDIDO CONFIRMADO!</h2>
+                <p class="confirmacion-texto">Tu entrada fue reservada con éxito. Te enviamos los detalles a tu correo electrónico.</p>
+                <div class="confirmacion-detalle">
+                    <div class="detalle-row">
+                        <span>Número de orden</span>
+                        <span id="ordenNumero">#EUR-0000</span>
+                    </div>
+                    <div id="confirmItems" class="resumen-items confirmacion-items"></div>
+                    <div class="detalle-row">
+                        <span>Total abonado</span>
+                        <span id="confirmPrecio">$0</span>
+                    </div>
+                    <div class="detalle-row">
+                        <span>Fecha de compra</span>
+                        <span id="confirmFecha">—</span>
+                    </div>
+                </div>
+                <a href="tienda.html" class="btn-outline">VOLVER AL INICIO</a>
+            </div>
+        </section>
+
+        <section class="historial-section" id="historial">
+            <div class="section-heading">
+                <p class="italic-subtitle">Tus compras</p>
+                <h2 class="section-title">HISTORIAL DE ÓRDENES</h2>
+            </div>
+            <div class="historial-tabla-wrapper">
+                <table class="historial-tabla">
+                    <thead>
+                        <tr>
+                            <th>Orden</th>
+                            <th>Fecha</th>
+                            <th>Entrada</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Orden">#EUR-1042</td>
+                            <td data-label="Fecha">03/05/2026</td>
+                            <td data-label="Entrada">Entrada VIP</td>
+                            <td data-label="Total">$28.000</td>
+                            <td data-label="Estado"><span class="estado-badge pagado">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Orden">#EUR-0981</td>
+                            <td data-label="Fecha">17/03/2026</td>
+                            <td data-label="Entrada">Entrada General</td>
+                            <td data-label="Total">$15.000</td>
+                            <td data-label="Estado"><span class="estado-badge pagado">Pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Orden">#EUR-0890</td>
+                            <td data-label="Fecha">22/01/2026</td>
+                            <td data-label="Entrada">Entrada Backstage</td>
+                            <td data-label="Total">$45.000</td>
+                            <td data-label="Estado"><span class="estado-badge pendiente">Pendiente</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <img src="images/LOGO EUREKA VECTOR.png" alt="Eureka Studio" class="footer-logo-img">
+            <p class="copyright">Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <div class="carrito-overlay" id="carritoOverlay"></div>
+
+    <aside class="carrito-drawer" id="carritoDrawer">
+        <div class="carrito-header">
+            <h3>Tu Carrito</h3>
+            <button class="carrito-cerrar" id="carritoCerrar" aria-label="Cerrar carrito">✕</button>
+        </div>
+        <div class="carrito-lista" id="carritoLista"></div>
+        <div class="carrito-vacio" id="carritoVacio">
+            <div class="carrito-vacio-icono">🛒</div>
+            <p>Todavía no agregaste nada al carrito.</p>
+        </div>
+        <div class="carrito-footer" id="carritoFooter">
+            <div class="carrito-total-row">
+                <span class="carrito-total-label">Total</span>
+                <span class="carrito-total-precio" id="carritoTotal">$0</span>
+            </div>
+            <a href="tienda.html?desde=carrito" class="carrito-btn-finalizar">FINALIZAR COMPRA</a>
+        </div>
+    </aside>
+
+    <!-- carrito.js PRIMERO -->
+    <script src="carrito.js"></script>
+
+    <!-- tienda.js SEGUNDO -->
+    <script src="tienda.js"></script>
+
+    <!-- nav y scroll AL FINAL -->
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.main-nav');
+
+        if (toggle && nav) {
+            toggle.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                toggle.classList.toggle('active');
+            });
+        }
+
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav) nav.classList.remove('active');
+                if (toggle) toggle.classList.remove('active');
+            });
+        });
+
+        document.querySelectorAll('.nav-index-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const hash = link.getAttribute('href').split('#')[1];
+                sessionStorage.setItem('scrollTo', hash);
+                window.location.href = 'index.html';
+            });
+        });
+
+        const logoLink = document.getElementById('logoLink');
+        if (logoLink) {
+            logoLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                sessionStorage.setItem('scrollTo', 'hero');
+                window.location.href = 'index.html';
+            });
+        }
+    </script>
+
+</body>
+</html>

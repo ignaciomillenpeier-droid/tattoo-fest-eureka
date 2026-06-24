@@ -1,0 +1,1194 @@
+/* --- VARIABLES Y RESET --- */
+:root {
+    --bg-base: #070707;
+    --bg-surface: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent-color: #333333;
+    
+   
+    --font-heading: 'neigh'; 
+    --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
+    --spacing-section: 6rem;
+}
+@font-face {
+    font-family: 'neigh'; 
+    src: url('fonts/Neighbor-Bold.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- TIPOGRAFÍA Y JERARQUÍA --- */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: normal;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+} 
+
+.section-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.subtitle {
+    
+    padding-bottom: 8px; 
+    border-bottom: 2px solid #8e0101; 
+    width: fit-content; 
+    
+
+    margin: 0 auto; 
+    
+    
+}
+.italic-subtitle {
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+
+.main-header {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 4rem; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999; 
+    
+    
+    background-color: rgba(7, 7, 7, 0.85); /
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+    
+   
+    transition: all 0.3s ease; 
+}
+
+
+
+.logo {
+    display: flex;        
+    align-items: center; 
+    gap: 10px;             
+    font-size: 1rem;       
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.logo lottie-player {
+    width: 45px !important;  
+    height: 45px !important;
+}
+
+
+.logo-imagen {
+  max-width: 100px; 
+  height: auto; 
+  display: block; 
+}
+.logo-animado {
+  width: 100px;
+  
+  animation: aparecer 1.2s ease-out, flotar 3s ease-in-out 1.2s infinite;
+  transition: transform 0.3s ease;
+}
+
+.logo-animado:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.logo span {
+    font-size: 0.7rem;
+    display: block;
+    letter-spacing: 0.4em;
+    color: var(--text-secondary);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+/* 1. El estado normal del enlace */
+.main-nav a {
+    color: #a09e9e;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    position: relative; 
+    transition: color 0.3s ease;
+}
+
+/
+.main-nav a::after {
+    content: ''; /* Crea un elemento vacío */
+    position: absolute;
+    bottom: -5px; 
+    left: 0;
+    width: 0%; 
+    height: 1px; 
+    background-color: #8e0101; 
+    transition: width 0.3s ease; 
+}
+
+
+.main-nav a:hover {
+    color: #dedada; 
+}
+
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url(images/akram-huseyn-smtP9zIj6qU-unsplash.jpg) center/cover no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(5, 5, 5, 0.75);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.main-title {
+    font-size: 5vw; 
+    margin: 1rem 0;
+    letter-spacing: 0.3em;
+}
+
+.description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+}
+
+
+.btn-outline {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: transparent;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    background: #8e0101;
+    color: #fff;
+}
+/* Contenedor principal */
+.galeria-section {
+  background-color: #0a0a0a; 
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.galeria-header .subtitle {
+  font-style: italic;
+  color: #888;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.galeria-header h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+}
+
+.galeria-header p {
+  color: #ccc;
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.galeria-header h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  
+  /* propiedades para el subrayado */
+  text-decoration: underline;
+  text-underline-offset: 8px; 
+  text-decoration-thickness: 3px; 
+  text-decoration-color: #8e0101; 
+}
+/* Contenedor Flexbox para la galería */
+.galeria-flex {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Tarjeta de cada obra */
+.obra-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px; 
+  background-color: #1a1a1a;
+  border-radius: 6px;
+  overflow: hidden; 
+}
+
+/* Contenedor de la imagen y efecto hover */
+.obra-imagen-container {
+  width: 100%;
+  height: 350px; 
+  overflow: hidden;
+}
+
+.obra-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: transform 0.4s ease; 
+}
+
+.obra-card:hover .obra-img {
+  transform: scale(1.08); 
+}
+
+/* Textos debajo de la obra */
+.obra-info {
+  padding: 20px;
+  text-align: left;
+  border-top: 2px solid #333;
+}
+
+.obra-info h4 {
+  margin: 0 0 5px 0;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.obra-info p {
+  margin: 0;
+  color: #888;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+/* --- CONTENEDOR PRINCIPAL DE LAS FOTOS --- */
+.image-flip-container {
+    width: 120px;       
+    height: 120px;
+    margin: 0 auto 1.5rem auto; 
+    
+  
+    position: relative; 
+    
+    display: block;
+    cursor: pointer;
+}
+
+//* --- CONTENEDOR DE LA IMAGEN --- */
+.image-flip-container {
+    width: 200px; 
+    height: 200px;
+    margin: 0 auto 20px;
+    position: relative; 
+    overflow: visible;  
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+/* --- ESTILO ESTÁNDAR PARA AMBAS IMÁGENES --- */
+.image-flip-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid #8e0101; 
+    box-sizing: border-box;
+    
+   
+    transition: opacity 0.6s ease-in-out, filter 0.6s ease;
+    backface-visibility: hidden; 
+}
+
+/* Efecto de agrandado suave de todo el círculo */
+.image-flip-container:hover {
+    transform: scale(1.15); 
+    z-index: 10;
+}
+
+/* --- CAPAS (Z-index) --- */
+
+.back-image {
+    z-index: 1;
+    opacity: 0; 
+    filter: grayscale(100%); 
+}
+
+.front-image {
+    z-index: 2;
+    opacity: 1;
+}
+
+/* --- LA MAGIA DEL HOVER (EL FUNDIDO) --- */
+
+/* Cuando pasamos el mouse, la cara desaparece suavemente */
+.image-flip-container:hover .front-image {
+    opacity: 0;
+}
+
+/* Y el tatuaje aparece suavemente */
+.image-flip-container:hover .back-image {
+    opacity: 1;
+    filter: grayscale(0%); 
+}
+
+.agenda-container {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 80px;             
+    max-width: 1200px;
+    margin: 60px auto;      
+    padding: 0 20px;
+}
+
+/* --- BLOQUE CALENDARIO (Izquierda) --- */
+.calendar-block {
+    flex: 0 0 350px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.agenda-title {
+    font-family: 'neigh', sans-serif;
+    font-size: 1.5rem; /* Aumentado */
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    width: 100%;
+    color: #888;
+}
+
+.day-name {
+    color: #555;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.calendar-grid div:not(.day-name) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    font-size: 0.9rem;
+    background: #0f0f0f; 
+    border-radius: 4px;
+}
+
+/* --- DÍA 12 (DESTACADO) --- */
+.event-day {
+    color: #fff !important;
+    border: 2px solid #8e0101 !important;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.event-day:hover {
+    background-color: #8e0101 !important;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(142, 1, 1, 0.6);
+}
+
+/* --- BLOQUE CRONOGRAMA (Derecha) --- */
+.timeline-block {
+    flex: 1; 
+    max-width: 600px; 
+}
+
+.timeline-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #8e0101;
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #1a1a1a; 
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+.time {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.4rem;
+    color: #8e0101; 
+    min-width: 70px;
+}
+
+.activity h4 {
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+    color: #fff;
+}
+
+.activity p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* --- RESPONSIVE PARA MÓVILES --- */
+@media (max-width: 850px) {
+    .agenda-container {
+        flex-direction: column; 
+        align-items: center;
+        gap: 50px;
+    }
+    .timeline-block {
+        width: 100%;
+    }
+}
+/* --- SECCIÓN ARTISTAS (CSS GRID) --- */
+.artists-section {
+    padding: var(--spacing-section) 4rem;
+    background-color: var(--bg-surface);
+}
+
+.section-desc {
+    text-align: center;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 4rem auto;
+    font-size: 0.9rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.artist-card {
+    text-align: center;
+}
+
+.placeholder-img {
+    width: 100px;
+    height: 100px;
+    background-color: var(--accent-color);
+    margin: 0 auto 1.5rem auto;
+    border-radius: 50%; 
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+    font-size: 0.8rem;       
+    padding: 5px 0;          
+    letter-spacing: 0.5px;  
+}
+
+.read-more::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #6E0516;
+    transition: width 0.3s ease;
+}
+
+.read-more:hover {
+    color: #6E0516;
+}
+
+.read-more:hover::after {
+    width: 100%; 
+}
+
+
+.location-section {
+    padding: var(--spacing-section) 4rem;
+    background-color: var(--bg-base);
+}
+
+.map-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 450px;
+    
+    border-bottom: 3px solid #8e0101; 
+}
+
+/* El filtro Dark que ya tenías para el mapa */
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%) invert(90%) contrast(80%);
+}
+/* --- TÍTULOS DE SECCIÓN CON LA OTRA TIPOGRAFÍA --- */
+.section-title {
+    font-family: var(--font-heading) !important; 
+    font-size: 2.5rem;   
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+/* --- TÍTULOS DE SECCIÓN (CON SUBRAYADO ROJO) --- */
+.section-heading {
+    text-align: center; 
+}
+
+.section-title {
+    font-family: var(--font-heading) !important; 
+    font-size: 2.5rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    
+   
+    display: inline-block; 
+    border-bottom: 2px solid #8e0101; 
+    padding-bottom: 0.5rem; 
+    margin-bottom: 1.5rem; 
+}
+
+/* Ajuste específico para que el subtítulo itálico no quede muy pegado */
+.italic-subtitle {
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem; 
+    display: block;
+}
+/* --- TARJETA DE INFORMACIÓN (OVERLAP) --- */
+.location-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    background-color: var(--bg-surface); 
+    padding: 3rem;
+    
+    
+    margin-top: -4rem; 
+    margin-left: 2rem;
+    margin-right: 2rem;
+    position: relative;
+    z-index: 10;
+    
+    /* Una sombra para que despegue del fondo */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
+}
+
+.info-block h4 {
+    color: #8e0101; /* El rojo de Eureka */
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.8rem;
+}
+
+.info-block p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* --- RESPONSIVE PARA CELULARES --- */
+@media (max-width: 768px) {
+    .location-info {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 2rem;
+    }
+    
+    .map-wrapper {
+        height: 300px;
+    }
+}
+
+/* =========================================
+   SECCIÓN CONTACTO Y FAQ
+========================================= */
+
+
+.faq-heading,
+.contact-heading {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.faq-heading .section-title,
+.contact-heading .section-title {
+    margin-bottom: 0;
+}
+
+.contact-heading .section-title {
+    font-size: 1.2rem;
+}
+
+/* --- ESTÉTICA MEJORADA DEL FAQ --- */
+.faq-item {
+    border-bottom: 1px solid #1a1a1a; 
+}
+
+details summary {
+    cursor: pointer;
+    font-family: var(--font-body); 
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    list-style: none;
+    padding: 1.5rem 0;
+    position: relative; 
+    transition: color 0.3s ease;
+}
+
+details summary:hover {
+    color: #8e0101; 
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Signo + interactivo */
+details summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #555;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Signo - al abrir */
+details[open] summary::after {
+    content: '-';
+    color: #8e0101;
+    transform: translateY(-50%) rotate(180deg);
+}
+.contact-faq-section {
+    padding: var(--spacing-section) 4rem;
+    background-color: var(--bg-surface);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    position: relative; 
+}
+
+/* --- LA LÍNEA DIVISORIA ROJA --- */
+.contact-faq-section::before {
+    content: "";
+    position: absolute;
+  
+    left: 50%;
+    transform: translateX(-50%);
+    
+    top: 6rem; 
+    bottom: 6rem; 
+    
+    
+    width: 1px; 
+    background-color: #8e0101; 
+    
+    background: linear-gradient(to bottom, transparent, #8e0101, transparent);
+}
+
+/* --- IMPORTANTE: Ocultar la línea en celulares --- */
+@media (max-width: 768px) {
+    .contact-faq-section::before {
+        display: none;
+    }
+}
+
+/* Hacemos que en celulares se ponga uno arriba del otro */
+@media (max-width: 768px) {
+    .contact-faq-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+.faq-answer {
+    color: var(--text-secondary);
+    margin-top: 0;
+    padding-bottom: 1.5rem; 
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+/* --- ESTÉTICA MEJORADA DEL FORMULARIO --- */
+.pro-form .input-group {
+    margin-bottom: 2.5rem; 
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse; 
+}
+
+.pro-form label {
+    margin-bottom: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555; 
+    transition: color 0.3s ease;
+}
+
+.pro-form input, 
+.pro-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333; 
+    color: var(--text-primary);
+    padding: 0.5rem 0;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pro-form input:focus, 
+.pro-form textarea:focus {
+    outline: none;
+    border-bottom-color: #8e0101; 
+    box-shadow: 0 1px 0 #8e0101; 
+}
+
+.pro-form input:focus + label,
+.pro-form textarea:focus + label {
+    color: #8e0101;
+}
+
+.pro-form button {
+    float: right;
+    margin-top: 1rem;
+}
+
+.pro-form::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* --- FOOTER FINAL --- */
+.site-footer {
+    background-color: #6E0516; 
+    padding: 4rem 2rem 2rem 2rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; 
+}
+
+.footer-logo {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -2px; 
+    line-height: 0.8;
+}
+
+.footer-logo span {
+    display: block;
+    font-size: 1.8rem;
+    letter-spacing: 0;
+}
+
+/* Redes Sociales */
+.social-links {
+    display: flex;
+    gap: 2rem; 
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #ffffff;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: inline-flex;
+}
+
+/* Animación al pasar el mouse por los íconos */
+.social-links a:hover {
+    transform: translateY(-5px); 
+    opacity: 0.7; 
+}
+
+/* Texto de derechos */
+.copyright {
+    font-size: 0.85rem;
+    color: 6E0516; 
+    margin-top: 1rem;
+    letter-spacing: 0.05em;
+}
+
+/* --- TAMAÑO DEL LOGO EN EL FOOTER --- */
+.footer-logo-img {
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    margin: 0 auto 1.5rem auto; 
+}
+
+
+.footer-logo span {
+    display: block;
+    font-family: var(--font-body); 
+    font-size: 1rem; 
+    font-weight: normal;
+    letter-spacing: 0.4em; 
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+}
+/* =========================================
+   RESPONSIVE GENERAL — TABLET (≤ 1024px)
+========================================= */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+/* =========================================
+   RESPONSIVE GENERAL — CELULAR (≤ 900px)
+========================================= */
+@media (max-width: 900px) {
+    .main-header {
+        padding: 1rem 1.5rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--bg-surface);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+    }
+
+    .main-nav.active {
+        right: 0;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   RESPONSIVE GENERAL — CELULAR CHICO (≤ 600px)
+========================================= */
+@media (max-width: 600px) {
+    .main-title {
+        font-size: clamp(2rem, 9vw, 3.5rem);
+        letter-spacing: 0.12em;
+    }
+
+    .description {
+        font-size: 0.85rem;
+    }
+
+    .btn-outline {
+        padding: 0.8rem 2rem;
+        font-size: 0.7rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .artists-section,
+    .location-section,
+    .contact-faq-section {
+        padding: var(--spacing-section) 1.5rem;
+    }
+
+    .galeria-section {
+        padding: 60px 15px;
+    }
+
+    .image-flip-container {
+        width: 150px;
+        height: 150px;
+    }
+}
+/* =========================================
+   SECCIÓN: LÍNEA DE PRODUCTOS Y SERVICIOS (index.html)
+========================================= */
+.oferta-section {
+    padding: var(--spacing-section) 4rem;
+    background-color: var(--bg-base);
+}
+
+.oferta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.oferta-card {
+    text-align: center;
+    background-color: var(--bg-surface);
+    padding: 2.5rem 2rem;
+    border-radius: 6px;
+    border: 1px solid var(--accent-color);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.oferta-card:hover {
+    transform: translateY(-6px);
+    border-color: #8e0101;
+}
+
+.oferta-icono {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.oferta-titulo {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.oferta-texto {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .oferta-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .oferta-section {
+        padding: var(--spacing-section) 1.5rem;
+    }
+
+    .oferta-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================
+   FIX: agrupar hamburguesa + carrito en mobile
+========================================= */
+@media (max-width: 900px) {
+    .header-actions-mobile {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+    }
+}
+.oferta-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px 6px 0 0;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+.oferta-card:hover .oferta-img {
+    transform: scale(1.04);
+}
+
+.oferta-card {
+    overflow: hidden;
+    padding: 0;
+}
+
+.oferta-card .oferta-icono,
+.oferta-card .oferta-titulo,
+.oferta-card .oferta-texto,
+.oferta-card .read-more {
+    padding: 0 2rem;
+}
+
+.oferta-card .oferta-titulo {
+    padding-top: 1.5rem;
+}
+
+.oferta-card .read-more {
+    display: inline-block;
+    padding-bottom: 2rem;
+}
