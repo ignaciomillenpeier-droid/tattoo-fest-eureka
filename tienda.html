@@ -7,47 +7,47 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="tienda.css">
     <link rel="stylesheet" href="carrito.css">
+    <link rel="stylesheet" href="animaciones.css">
 </head>
 <body>
 
     <header class="main-header">
         <div class="logo">
-            <a href="index.html" id="logoLink">
-                <img src="images/LOGO EUREKA VECTOR.png" alt="Eureka Studio" class="logo-animado">
-            </a>
+            <img src="images/LOGO EUREKA VECTOR.png" alt="Eureka Studio" class="logo-animado">
         </div>
+
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
         <nav class="main-nav">
             <ul>
-                <li><a href="index.html#hero" class="nav-index-link">Inicio</a></li>
-                <li><a href="index.html#agenda" class="nav-index-link">Agenda</a></li>
-                <li><a href="index.html#artistas-invitados" class="nav-index-link">Artistas Invitados</a></li>
+                <li><a href="index.html#hero">Inicio</a></li>
+                <li><a href="index.html#agenda">Agenda</a></li>
+                <li><a href="index.html#artistas-invitados">Artistas Invitados</a></li>
                 <li><a href="productos.html">Tienda</a></li>
                 <li><a href="tienda.html" class="active-link">Entradas VIP</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
             </ul>
         </nav>
 
-        <div class="header-actions-mobile">
-            <div class="carrito-icono-wrapper" id="carritoIcono">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
-                <span class="carrito-contador" id="carritoContador">0</span>
-            </div>
-
-            <button class="menu-toggle" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <div class="carrito-icono-wrapper" id="carritoIcono">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="carrito-contador" id="carritoContador">0</span>
         </div>
     </header>
 
     <main class="tienda-main">
 
+        <!-- ============================
+             HERO DE LA TIENDA
+        ============================= -->
         <section class="tienda-hero">
             <div class="tienda-hero-content">
                 <p class="italic-subtitle">Asegurá tu lugar en</p>
@@ -56,6 +56,9 @@
             </div>
         </section>
 
+        <!-- ============================
+             PASOS DE COMPRA (indicador)
+        ============================= -->
         <div class="checkout-steps" id="checkoutSteps">
             <div class="step active" data-step="1">
                 <span class="step-number">1</span>
@@ -78,8 +81,13 @@
             </div>
         </div>
 
+        <!-- ============================
+             PANTALLA 1: ENTRADAS DISPONIBLES + RESUMEN DEL CARRITO
+        ============================= -->
         <section class="checkout-screen active" id="screen-1">
+
             <div class="productos-grid">
+
                 <article class="producto-card" data-nombre="Entrada General" data-precio="15000">
                     <div class="producto-tag">ACCESO BÁSICO</div>
                     <h3 class="producto-nombre">General</h3>
@@ -117,14 +125,19 @@
                     </ul>
                     <button class="btn-outline btn-comprar" data-nombre="Entrada Backstage" data-precio="45000">AGREGAR AL CARRITO</button>
                 </article>
+
             </div>
 
             <div class="resumen-paso1-wrapper">
                 <p class="resumen-paso1-texto">¿Ya elegiste todo? Revisá tu carrito (ícono arriba a la derecha) y continuá con la compra.</p>
                 <button class="btn-outline" id="btnContinuarDesdeCarrito">CONTINUAR CON MI PEDIDO</button>
             </div>
+
         </section>
 
+        <!-- ============================
+             PANTALLA 2: DATOS PERSONALES
+        ============================= -->
         <section class="checkout-screen" id="screen-2">
             <div class="checkout-form-wrapper">
                 <div class="resumen-compra">
@@ -135,22 +148,27 @@
 
                 <form class="pro-form checkout-form" id="formDatos">
                     <h3 class="form-subtitle">Datos personales</h3>
+
                     <div class="input-group">
                         <label for="nombreComprador">Nombre y apellido</label>
                         <input type="text" id="nombreComprador" required>
                     </div>
+
                     <div class="input-group">
                         <label for="emailComprador">Correo electrónico</label>
                         <input type="email" id="emailComprador" required>
                     </div>
+
                     <div class="input-group">
                         <label for="dniComprador">DNI</label>
                         <input type="text" id="dniComprador" required>
                     </div>
+
                     <div class="input-group">
                         <label for="direccionComprador">Dirección</label>
                         <input type="text" id="direccionComprador" required>
                     </div>
+
                     <div class="checkout-buttons">
                         <button type="button" class="btn-volver" data-volver="1">VOLVER</button>
                         <button type="submit" class="btn-outline">CONTINUAR</button>
@@ -159,6 +177,9 @@
             </div>
         </section>
 
+        <!-- ============================
+             PANTALLA 3: MÉTODO DE PAGO
+        ============================= -->
         <section class="checkout-screen" id="screen-3">
             <div class="checkout-form-wrapper">
                 <div class="resumen-compra">
@@ -169,6 +190,7 @@
 
                 <form class="pro-form checkout-form" id="formPago">
                     <h3 class="form-subtitle">Método de pago</h3>
+
                     <div class="metodos-pago">
                         <label class="metodo-pago-option">
                             <input type="radio" name="metodoPago" value="tarjeta" checked>
@@ -189,6 +211,7 @@
                             <label for="numeroTarjeta">Número de tarjeta</label>
                             <input type="text" id="numeroTarjeta" placeholder="0000 0000 0000 0000" maxlength="19">
                         </div>
+
                         <div class="form-row">
                             <div class="input-group">
                                 <label for="vencimiento">Vencimiento</label>
@@ -199,6 +222,7 @@
                                 <input type="text" id="cvv" placeholder="123" maxlength="3">
                             </div>
                         </div>
+
                         <div class="input-group">
                             <label for="nombreTarjeta">Nombre en la tarjeta</label>
                             <input type="text" id="nombreTarjeta">
@@ -213,11 +237,15 @@
             </div>
         </section>
 
+        <!-- ============================
+             PANTALLA 4: CONFIRMACIÓN
+        ============================= -->
         <section class="checkout-screen" id="screen-4">
             <div class="confirmacion-box">
                 <div class="check-icon">✓</div>
                 <h2 class="section-title">¡PEDIDO CONFIRMADO!</h2>
                 <p class="confirmacion-texto">Tu entrada fue reservada con éxito. Te enviamos los detalles a tu correo electrónico.</p>
+
                 <div class="confirmacion-detalle">
                     <div class="detalle-row">
                         <span>Número de orden</span>
@@ -233,15 +261,20 @@
                         <span id="confirmFecha">—</span>
                     </div>
                 </div>
+
                 <a href="tienda.html" class="btn-outline">VOLVER AL INICIO</a>
             </div>
         </section>
 
+        <!-- ============================
+             HISTORIAL DE ÓRDENES
+        ============================= -->
         <section class="historial-section" id="historial">
             <div class="section-heading">
                 <p class="italic-subtitle">Tus compras</p>
                 <h2 class="section-title">HISTORIAL DE ÓRDENES</h2>
             </div>
+
             <div class="historial-tabla-wrapper">
                 <table class="historial-tabla">
                     <thead>
@@ -289,70 +322,32 @@
         </div>
     </footer>
 
-    <div class="carrito-overlay" id="carritoOverlay"></div>
+<div class="carrito-overlay" id="carritoOverlay"></div>
 
-    <aside class="carrito-drawer" id="carritoDrawer">
-        <div class="carrito-header">
-            <h3>Tu Carrito</h3>
-            <button class="carrito-cerrar" id="carritoCerrar" aria-label="Cerrar carrito">✕</button>
+<aside class="carrito-drawer" id="carritoDrawer">
+    <div class="carrito-header">
+        <h3>Tu Carrito</h3>
+        <button class="carrito-cerrar" id="carritoCerrar" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div class="carrito-lista" id="carritoLista"></div>
+
+    <div class="carrito-vacio" id="carritoVacio">
+        <div class="carrito-vacio-icono">🛒</div>
+        <p>Todavía no agregaste nada al carrito.</p>
+    </div>
+
+    <div class="carrito-footer" id="carritoFooter">
+        <div class="carrito-total-row">
+            <span class="carrito-total-label">Total</span>
+            <span class="carrito-total-precio" id="carritoTotal">$0</span>
         </div>
-        <div class="carrito-lista" id="carritoLista"></div>
-        <div class="carrito-vacio" id="carritoVacio">
-            <div class="carrito-vacio-icono">🛒</div>
-            <p>Todavía no agregaste nada al carrito.</p>
-        </div>
-        <div class="carrito-footer" id="carritoFooter">
-            <div class="carrito-total-row">
-                <span class="carrito-total-label">Total</span>
-                <span class="carrito-total-precio" id="carritoTotal">$0</span>
-            </div>
-            <a href="tienda.html?desde=carrito" class="carrito-btn-finalizar">FINALIZAR COMPRA</a>
-        </div>
-    </aside>
+        <a href="tienda.html?desde=carrito" class="carrito-btn-finalizar">FINALIZAR COMPRA</a>
+    </div>
+</aside>
 
-    <!-- carrito.js PRIMERO -->
-    <script src="carrito.js"></script>
-
-    <!-- tienda.js SEGUNDO -->
-    <script src="tienda.js"></script>
-
-    <!-- nav y scroll AL FINAL -->
-    <script>
-        const toggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('.main-nav');
-
-        if (toggle && nav) {
-            toggle.addEventListener('click', () => {
-                nav.classList.toggle('active');
-                toggle.classList.toggle('active');
-            });
-        }
-
-        document.querySelectorAll('.main-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (nav) nav.classList.remove('active');
-                if (toggle) toggle.classList.remove('active');
-            });
-        });
-
-        document.querySelectorAll('.nav-index-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const hash = link.getAttribute('href').split('#')[1];
-                sessionStorage.setItem('scrollTo', hash);
-                window.location.href = 'index.html';
-            });
-        });
-
-        const logoLink = document.getElementById('logoLink');
-        if (logoLink) {
-            logoLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                sessionStorage.setItem('scrollTo', 'hero');
-                window.location.href = 'index.html';
-            });
-        }
-    </script>
-
+<script src="carrito.js"></script>
+<script src="tienda.js"></script>
+    <script src="animaciones.js"></script>
 </body>
 </html>

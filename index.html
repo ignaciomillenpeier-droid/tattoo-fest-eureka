@@ -6,16 +6,21 @@
     <title>Tattoo Fest | Convención de Arte</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="carrito.css">
+    <link rel="stylesheet" href="animaciones.css">
 </head>
 
 <body>
 
     <header class="main-header">
         <div class="logo">
-            <a href="#hero">
-                <img src="images/LOGO EUREKA VECTOR.png" alt="Eureka Studio" class="logo-animado">
-            </a>
+            <img src="images/LOGO EUREKA VECTOR.png" alt="Eureka Studio" class="logo-animado">
         </div>
+
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
         <nav class="main-nav">
             <ul>
@@ -24,25 +29,17 @@
                 <li><a href="#artistas-invitados">Artistas Invitados</a></li>
                 <li><a href="productos.html">Tienda</a></li>
                 <li><a href="tienda.html">Entradas VIP</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
 
-        <div class="header-actions-mobile">
-            <div class="carrito-icono-wrapper" id="carritoIcono">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
-                <span class="carrito-contador" id="carritoContador">0</span>
-            </div>
-
-            <button class="menu-toggle" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <div class="carrito-icono-wrapper" id="carritoIcono">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="carrito-contador" id="carritoContador">0</span>
         </div>
     </header>
 
@@ -54,379 +51,370 @@
                 <h1 class="main-title">TATTOO FEST EUREKA</h1>
                 <p class="description">"El tatuaje es más que tinta en la piel; es diseño, técnica y devoción. Reunimos a los mejores exponentes en una jornada dedicada a elevar el nivel del arte corporal."</p>
                 <a href="#contacto" class="btn-outline">CONSEGUIR ENTRADAS</a>
+                
             </div>
         </section>
+<section id="agenda" class="agenda-section">
+    <div class="agenda-container">
+        
+        <div class="calendar-block">
+            <h2 class="agenda-title">Octubre <span>2026</span></h2>
+            <div class="calendar-grid">
+                <div class="day-name">L</div><div class="day-name">M</div><div class="day-name">M</div>
+                <div class="day-name">J</div><div class="day-name">V</div><div class="day-name">S</div>
+                <div class="day-name">D</div>
+                
+                <div class="empty"></div><div class="empty"></div><div class="empty"></div>
+                <div>1</div><div>2</div><div>3</div><div>4</div>
+                <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div>
+                
+                <div class="event-day">12</div>
+                
+                <div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div>
+                <div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div>
+                <div>26</div><div>27</div><div>28</div><div>29</div><div>30</div><div>31</div>
+            </div>
+        </div>
 
-        <section id="agenda" class="agenda-section">
-            <div class="agenda-container">
-                <div class="calendar-block">
-                    <h2 class="agenda-title">Octubre <span>2026</span></h2>
-                    <div class="calendar-grid">
-                        <div class="day-name">L</div><div class="day-name">M</div><div class="day-name">M</div>
-                        <div class="day-name">J</div><div class="day-name">V</div><div class="day-name">S</div>
-                        <div class="day-name">D</div>
-                        <div class="empty"></div><div class="empty"></div><div class="empty"></div>
-                        <div>1</div><div>2</div><div>3</div><div>4</div>
-                        <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div>
-                        <div class="event-day">12</div>
-                        <div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div>
-                        <div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div>
-                        <div>26</div><div>27</div><div>28</div><div>29</div><div>30</div><div>31</div>
-                    </div>
-                </div>
-
-                <div class="timeline-block">
-                    <h3 class="timeline-title">CRONOGRAMA DE ACTIVIDADES</h3>
-                    <div class="timeline-item">
-                        <span class="time">12:00</span>
-                        <div class="activity">
-                            <h4>APERTURA DE PUERTAS</h4>
-                            <p>Check-in de artistas y acreditaciones.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="time">15:30</span>
-                        <div class="activity">
-                            <h4>SEMINARIO: BLACKWORK AVANZADO</h4>
-                            <p>Técnicas de saturación y composición corporal.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="time">19:00</span>
-                        <div class="activity">
-                            <h4>FLASH DAY CONTEST</h4>
-                            <p>Competencia en vivo de diseños rápidos.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="time">22:00</span>
-                        <div class="activity">
-                            <h4>PREMIACIÓN Y CIERRE</h4>
-                            <p>Anuncio de ganadores por categoría.</p>
-                        </div>
-                    </div>
+        <div class="timeline-block">
+            <h3 class="timeline-title">CRONOGRAMA DE ACTIVIDADES</h3>
+            <div class="timeline-item">
+                <span class="time">12:00</span>
+                <div class="activity">
+                    <h4>APERTURA DE PUERTAS</h4>
+                    <p>Check-in de artistas y acreditaciones.</p>
                 </div>
             </div>
-        </section>
+            <div class="timeline-item">
+                <span class="time">15:30</span>
+                <div class="activity">
+                    <h4>SEMINARIO: BLACKWORK AVANZADO</h4>
+                    <p>Técnicas de saturación y composición corporal.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">19:00</span>
+                <div class="activity">
+                    <h4>FLASH DAY CONTEST</h4>
+                    <p>Competencia en vivo de diseños rápidos.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <span class="time">22:00</span>
+                <div class="activity">
+                    <h4>PREMIACIÓN Y CIERRE</h4>
+                    <p>Anuncio de ganadores por categoría.</p>
+                </div>
+            </div>
+        </div>
 
+    </div>
+</section>
         <section class="galeria-section">
-            <div class="galeria-header">
-                <span class="subtitle">Mas allá de la piel</span>
-                <h2>GALERIA DE ARTE</h2>
-                <p>Explorá las obras originales de nuestros artistas invitados. Desde estudios clásicos de anatomía hasta piezas en pastel y grafito sobre madera.</p>
-            </div>
+  <div class="galeria-header">
+    <span class="subtitle">Mas allá de la piel</span>
+    <h2>GALERIA DE ARTE</h2>
+    <p>Explorá las obras originales de nuestros artistas invitados. Desde estudios clásicos de anatomía hasta piezas en pastel y grafito sobre madera.</p>
+  </div>
 
-            <div class="galeria-flex">
-                <div class="obra-card">
-                    <div class="obra-imagen-container">
-                        <img src="images/GRAFITO.jpg" alt="Estudio de anatomía" class="obra-img">
-                    </div>
-                    <div class="obra-info">
-                        <h4>Estudio Anatómico</h4>
-                        <p>Grafito sobre papel</p>
-                    </div>
-                </div>
+  <div class="galeria-flex">
+    <div class="obra-card">
+      <div class="obra-imagen-container">
+        <img src="images/GRAFITO.jpg" alt="Estudio de anatomía" class="obra-img">
+      </div>
+      <div class="obra-info">
+        <h4>Estudio Anatómico</h4>
+        <p>Grafito sobre papel</p>
+      </div>
+    </div>
 
-                <div class="obra-card">
-                    <div class="obra-imagen-container">
-                        <img src="images/CLAROSCURO.jpg" alt="Obra en pastel sobre madera" class="obra-img">
-                    </div>
-                    <div class="obra-info">
-                        <h4>Claroscuro Clásico</h4>
-                        <p>Pastel sobre soporte de madera</p>
-                    </div>
-                </div>
+    <div class="obra-card">
+      <div class="obra-imagen-container">
+        <img src="images/CLAROSCURO.jpg" alt="Obra en pastel sobre madera" class="obra-img">
+      </div>
+      <div class="obra-info">
+        <h4>Claroscuro Clásico</h4>
+        <p>Pastel sobre soporte de madera</p>
+      </div>
+    </div>
 
-                <div class="obra-card">
-                    <div class="obra-imagen-container">
-                        <img src="images/acuarela.jpg" alt="Pintura tradicional" class="obra-img">
-                    </div>
-                    <div class="obra-info">
-                        <h4>Tradicional</h4>
-                        <p>Acuarela y tinta</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="obra-card">
+      <div class="obra-imagen-container">
+        <img src="images/acuarela.jpg" alt="Pintura tradicional" class="obra-img">
+      </div>
+      <div class="obra-info">
+        <h4>Tradicional</h4>
+        <p>Acuarela y tinta</p>
+      </div>
+    </div>
+  </div>
+</section>
+           <section id="artistas-invitados" class="artists-section">
+    <div class="section-heading">
+        <p class="italic-subtitle">Conocé a los</p>
+        <h2 class="section-title">ARTISTAS INVITADOS</h2>
+        <p class="section-desc">Los mejores exponentes del tatuaje nacional e internacional reunidos en un solo lugar.</p>
+    </div>
+    
+    <div class="grid-container">
+        
+        <article class="artist-card">
+    <div class="image-flip-container card-image">
+        <img src="images/tattoo1.jpg" alt="Tattoo de Artista 1" class="back-image">
+        <img src="images/artist1.jpg" alt="Foto de Artista 1" class="front-image">
+    </div>
+    
+    <h3 class="card-title">Manuel Correa</h3>
+    <p class="card-text">Especialista en Blackwork y puntillismo.</p>
+    <a href="#" class="read-more">VER PORTFOLIO</a>
+</article>
 
-        <section id="artistas-invitados" class="artists-section">
-            <div class="section-heading">
-                <p class="italic-subtitle">Conocé a los</p>
-                <h2 class="section-title">ARTISTAS INVITADOS</h2>
-                <p class="section-desc">Los mejores exponentes del tatuaje nacional e internacional reunidos en un solo lugar.</p>
-            </div>
+<article class="artist-card">
+    <div class="image-flip-container card-image">
+        <img src="images/tattoo2.jpg" alt="Tattoo de Artista 2" class="back-image">
+        <img src="images/artist2.jpg" alt="Foto de Artista 2" class="front-image">
+    </div>
+    
+    <h3 class="card-title">Ismael Ramires</h3>
+    <p class="card-text">Realismo en sombras y texturas.</p>
+    <a href="https://iristattoo.com.ar/" target="_blank" class="read-more">VER PORTFOLIO</a>
+</article>
 
-            <div class="grid-container">
-                <article class="artist-card">
-                    <div class="image-flip-container card-image">
-                        <img src="images/tattoo1.jpg" alt="Tattoo de Artista 1" class="back-image">
-                        <img src="images/artist1.jpg" alt="Foto de Artista 1" class="front-image">
-                    </div>
-                    <h3 class="card-title">Manuel Correa</h3>
-                    <p class="card-text">Especialista en Blackwork y puntillismo.</p>
-                    <a href="#" class="read-more">VER PORTFOLIO</a>
-                </article>
+<article class="artist-card">
+    <div class="image-flip-container card-image">
+        <img src="images/tattoo3.jpg" alt="Tattoo de Artista 3" class="back-image">
+        <img src="images/artist3.jpg" alt="Foto de Artista 3" class="front-image">
+    </div>
+    
+    <h3 class="card-title">Maira Lirsan</h3>
+    <p class="card-text">Estilo tradicional y neotradicional.</p>
+    <a href="https://www.instagram.com/yeyo_tattoos/" target="_blank" class="read-more">VER PORTFOLIO</a>
+</article>
 
-                <article class="artist-card">
-                    <div class="image-flip-container card-image">
-                        <img src="images/tattoo2.jpg" alt="Tattoo de Artista 2" class="back-image">
-                        <img src="images/artist2.jpg" alt="Foto de Artista 2" class="front-image">
-                    </div>
-                    <h3 class="card-title">Ismael Ramires</h3>
-                    <p class="card-text">Realismo en sombras y texturas.</p>
-                    <a href="https://iristattoo.com.ar/" target="_blank" class="read-more">VER PORTFOLIO</a>
-                </article>
+<article class="artist-card">
+    <div class="image-flip-container card-image">
+        <img src="images/tattoo4.jpeg" alt="Tattoo de Artista 4" class="back-image">
+        <img src="images/artist4.jpg" alt="Foto de Artista 4" class="front-image">
+    </div>
+    
+    <h3 class="card-title">Matias Morante</h3>
+    <p class="card-text">Geometría sagrada y ornamental.</p>
+    <a href="https://www.instagram.com/matiasmorantetattoo/?hl=es-la" target="_blank" class="read-more">VER PORTFOLIO</a>
+</article>
 
-                <article class="artist-card">
-                    <div class="image-flip-container card-image">
-                        <img src="images/tattoo3.jpg" alt="Tattoo de Artista 3" class="back-image">
-                        <img src="images/artist3.jpg" alt="Foto de Artista 3" class="front-image">
-                    </div>
-                    <h3 class="card-title">Maira Lirsan</h3>
-                    <p class="card-text">Estilo tradicional y neotradicional.</p>
-                    <a href="https://www.instagram.com/yeyo_tattoos/" target="_blank" class="read-more">VER PORTFOLIO</a>
-                </article>
+<article class="artist-card">
+    <div class="image-flip-container card-image">
+        <img src="images/tattoo5.jpg" alt="Tattoo de Artista 5" class="back-image">
+        <img src="images/atist5.jpg" alt="Foto de Artista 5" class="front-image">
+    </div>
+    
+    <h3 class="card-title">Sebas Art</h3>
+    <p class="card-text">Irezumi y estilo japonés clásico.</p>
+    <a href="https://www.instagram.com/reel/DFJNN-MPiOv/" target="_blank" class="read-more">VER PORTFOLIO</a>
+</article>
 
-                <article class="artist-card">
-                    <div class="image-flip-container card-image">
-                        <img src="images/tattoo4.jpeg" alt="Tattoo de Artista 4" class="back-image">
-                        <img src="images/artist4.jpg" alt="Foto de Artista 4" class="front-image">
-                    </div>
-                    <h3 class="card-title">Matias Morante</h3>
-                    <p class="card-text">Geometría sagrada y ornamental.</p>
-                    <a href="https://www.instagram.com/matiasmorantetattoo/?hl=es-la" target="_blank" class="read-more">VER PORTFOLIO</a>
-                </article>
-
-                <article class="artist-card">
-                    <div class="image-flip-container card-image">
-                        <img src="images/tattoo5.jpg" alt="Tattoo de Artista 5" class="back-image">
-                        <img src="images/atist5.jpg" alt="Foto de Artista 5" class="front-image">
-                    </div>
-                    <h3 class="card-title">Sebas Art</h3>
-                    <p class="card-text">Irezumi y estilo japonés clásico.</p>
-                    <a href="https://www.instagram.com/reel/DFJNN-MPiOv/" target="_blank" class="read-more">VER PORTFOLIO</a>
-                </article>
-
-                <article class="artist-card">
-                    <div class="image-flip-container card-image">
-                        <img src="images/tattoo6.jpg" alt="Tattoo de Artista 6" class="back-image">
-                        <img src="images/artist6.jpg" alt="Foto de Artista 6" class="front-image">
-                    </div>
-                    <h3 class="card-title">Camila Lopez</h3>
-                    <p class="card-text">Lettering y caligrafía custom.</p>
-                    <a href="https://www.instagram.com/cattastrofe_/" target="_blank" class="read-more">VER PORTFOLIO</a>
-                </article>
-            </div>
-        </section>
-
+<article class="artist-card">
+    <div class="image-flip-container card-image">
+        <img src="images/tattoo6.jpg" alt="Tattoo de Artista 6" class="back-image">
+        <img src="images/artist6.jpg" alt="Foto de Artista 6" class="front-image">
+    </div>
+    
+    <h3 class="card-title">Camila Lopez</h3>
+    <p class="card-text">Lettering y caligrafía custom.</p>
+    <a href="https://www.instagram.com/cattastrofe_/" target="_blank" class="read-more">VER PORTFOLIO</a>
+</article>
+</section>
         <section class="oferta-section">
-            <div class="section-heading">
-                <p class="italic-subtitle">Más allá del evento</p>
-                <h2 class="section-title">NUESTRA LINEA DE PRODUCTOS Y SERVICIOS</h2>
-                <p class="section-desc">Eureka Studio no termina cuando se apagan las luces de la convención. Ofrecemos una experiencia completa, antes, durante y después del evento.</p>
-            </div>
+    <div class="section-heading">
+        <p class="italic-subtitle">Más allá del evento</p>
+        <h2 class="section-title">NUESTRA LÍNEA DE PRODUCTOS Y SERVICIOS</h2>
+        <p class="section-desc">Eureka Studio no termina cuando se apagan las luces de la convención. Ofrecemos una experiencia completa, antes, durante y después del evento.</p>
+    </div>
 
-            <div class="oferta-grid">
-                <article class="oferta-card">
-                    <img src="images/oferta-entradas.png" alt="Entradas y Accesos" class="oferta-img">
-                    <h3 class="oferta-titulo">Entradas y Accesos</h3>
-                    <p class="oferta-texto">Elegí entre Entrada General, VIP o Backstage según la experiencia que busques vivir en la convención.</p>
-                    <a href="tienda.html" class="read-more">VER ENTRADAS</a>
-                </article>
+    <div class="oferta-grid">
 
-                <article class="oferta-card">
-                    <img src="images/oferta-sesiones.png" alt="Sesiones de Tatuaje" class="oferta-img">
-                    <h3 class="oferta-titulo">Sesiones de Tatuaje</h3>
-                    <p class="oferta-texto">Reservá un turno con nuestros artistas invitados: flash, diseño personalizado o cover-up.</p>
-                    <a href="productos.html#sesiones" class="read-more">RESERVAR TURNO</a>
-                </article>
+        <article class="oferta-card">
+    <img src="images/oferta-entradas.png" alt="Entradas y Accesos" class="oferta-img">
+    <h3 class="oferta-titulo">Entradas y Accesos</h3>
+    <p class="oferta-texto">Elegí entre Entrada General, VIP o Backstage según la experiencia que busques vivir en la convención.</p>
+    <a href="tienda.html" class="read-more">VER ENTRADAS</a>
+</article>
 
-                <article class="oferta-card">
-                    <img src="images/oferta-merch.png" alt="Merchandising Oficial" class="oferta-img">
-                    <h3 class="oferta-titulo">Merchandising Oficial</h3>
-                    <p class="oferta-texto">Remeras, stickers y láminas con diseños exclusivos de la edición 2026.</p>
-                    <a href="productos.html#merch" class="read-more">VER PRODUCTOS</a>
-                </article>
-            </div>
-        </section>
+<article class="oferta-card">
+    <img src="images/oferta-sesiones.png" alt="Sesiones de Tatuaje" class="oferta-img">
+    <h3 class="oferta-titulo">Sesiones de Tatuaje</h3>
+    <p class="oferta-texto">Reservá un turno con nuestros artistas invitados: flash, diseño personalizado o cover-up.</p>
+    <a href="productos.html#sesiones" class="read-more">RESERVAR TURNO</a>
+</article>
+
+<article class="oferta-card">
+    <img src="images/oferta-merch.png" alt="Merchandising Oficial" class="oferta-img">
+    <h3 class="oferta-titulo">Merchandising Oficial</h3>
+    <p class="oferta-texto">Remeras, stickers y láminas con diseños exclusivos de la edición 2026.</p>
+    <a href="productos.html#merch" class="read-more">VER PRODUCTOS</a>
+</article>
+    </div>
+</section>
 
         <section id="ubicacion" class="location-section">
-            <div class="section-heading">
-                <p class="italic-subtitle">Te esperamos en el</p>
-                <h2 class="section-title">CENTRO DE CONVENCIONES</h2>
+    <div class="section-heading">
+        <p class="italic-subtitle">Te esperamos en el</p>
+        <h2 class="section-title">CENTRO DE CONVENCIONES</h2>
+    </div>
+
+    <div class="map-container">
+        <div class="map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13136.06691402283!2d-58.381592!3d-34.6037389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="location-info">
+            <div class="info-block">
+                <h4>DIRECCIÓN</h4>
+                <p>Av. Corrientes 1234<br>Ciudad Autónoma de Buenos Aires</p>
             </div>
-
-            <div class="map-container">
-                <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13136.06691402283!2d-58.381592!3d-34.6037389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-
-                <div class="location-info">
-                    <div class="info-block">
-                        <h4>DIRECCIÓN</h4>
-                        <p>Av. Corrientes 1234<br>Ciudad Autónoma de Buenos Aires</p>
-                    </div>
-                    <div class="info-block">
-                        <h4>TRANSPORTE</h4>
-                        <p>Subte: Línea B y C (Est. Carlos Pellegrini)<br>Colectivos: 9, 10, 17, 45, 59, 67</p>
-                    </div>
-                    <div class="info-block">
-                        <h4>FECHAS Y HORARIOS</h4>
-                        <p>Sábado 12 y Domingo 13 de Octubre<br>Apertura de puertas: 12:00 hs</p>
-                    </div>
-                </div>
+            <div class="info-block">
+                <h4>TRANSPORTE</h4>
+                <p>Subte: Línea B y C (Est. Carlos Pellegrini)<br>Colectivos: 9, 10, 17, 45, 59, 67</p>
             </div>
-        </section>
-
-        <section id="contacto" class="contact-faq-section">
-            <div class="faq-container">
-                <div class="section-heading faq-heading">
-                    <p class="italic-subtitle">Resolvemos tus dudas</p>
-                    <h2 class="section-title">FAQ</h2>
-                </div>
-
-                <div class="faq-item">
-                    <details>
-                        <summary>¿Cómo reservo un turno para tatuarme?</summary>
-                        <p class="faq-answer">Debes contactar directamente al artista a través de sus redes sociales proporcionadas en la sección de artistas invitados.</p>
-                    </details>
-                </div>
-                <div class="faq-item">
-                    <details>
-                        <summary>¿Hay estacionamiento disponible?</summary>
-                        <p class="faq-answer">El predio cuenta con estacionamiento limitado. Recomendamos utilizar transporte público.</p>
-                    </details>
-                </div>
-                <div class="faq-item">
-                    <details>
-                        <summary>¿Se puede ingresar con menores de edad?</summary>
-                        <p class="faq-answer">Sí, el evento es apto para todo público. Los menores de 12 años no abonan entrada pero deben estar acompañados por un adulto responsable en todo momento.</p>
-                    </details>
-                </div>
-                <div class="faq-item">
-                    <details>
-                        <summary>¿Cuáles son los medios de pago en el predio?</summary>
-                        <p class="faq-answer">Dentro de la convención podrás pagar con efectivo, transferencia o Mercado Pago. Algunos artistas internacionales podrían manejarse únicamente con efectivo.</p>
-                    </details>
-                </div>
+            <div class="info-block">
+                <h4>FECHAS Y HORARIOS</h4>
+                <p>Sábado 12 y Domingo 13 de Octubre<br>Apertura de puertas: 12:00 hs</p>
             </div>
+        </div>
+    </div>
+</section>
 
-            <div class="contact-container">
-                <div class="section-heading contact-heading">
-                    <p class="italic-subtitle">Early Bird</p>
-                    <h2 class="section-title">ACCESO ANTICIPADO</h2>
-                </div>
+       <section id="contacto" class="contact-faq-section">
+    <div class="faq-container">
+        <div class="section-heading faq-heading">
+            <p class="italic-subtitle">Resolvemos tus dudas</p>
+            <h2 class="section-title">FAQ</h2>
+        </div>
+        
+        <div class="faq-item">
+            <details>
+                <summary>¿Cómo reservo un turno para tatuarme?</summary>
+                <p class="faq-answer">Debes contactar directamente al artista a través de sus redes sociales proporcionadas en la sección de artistas invitados.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>¿Hay estacionamiento disponible?</summary>
+                <p class="faq-answer">El predio cuenta con estacionamiento limitado. Recomendamos utilizar transporte público.</p>
+            </details>
+        </div>
+        <div class="faq-item">
+            <details>
+                <summary>¿Se puede ingresar con menores de edad?</summary>
+                <p class="faq-answer">Sí, el evento es apto para todo público. Los menores de 12 años no abonan entrada pero deben estar acompañados por un adulto responsable en todo momento.</p>
+            </details>
+        </div>
 
-                <form class="pro-form">
-                    <div class="input-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-outline">ENVIAR</button>
-                </form>
+        <div class="faq-item">
+            <details>
+                <summary>¿Cuáles son los medios de pago en el predio?</summary>
+                <p class="faq-answer">Dentro de la convención podrás pagar con efectivo, transferencia o Mercado Pago. Algunos artistas internacionales podrían manejarse únicamente con efectivo.</p>
+            </details>
+        </div>
+    </div>
+
+    <div class="contact-container">
+        <div class="section-heading contact-heading">
+            <p class="italic-subtitle">Early Bird</p>
+            <h2 class="section-title">ACCESO ANTICIPADO</h2>
+        </div>
+        
+        <form class="pro-form">
+            <div class="input-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
             </div>
-        </section>
+            <div class="input-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-outline">ENVIAR</button>
+        </form>
+    </div>
+</section>
     </main>
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <img src="images/LOGO EUREKA VECTOR.png" alt="Eureka Studio" class="footer-logo-img">
-            <div class="social-links">
-                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.822a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z"/>
-                    </svg>
-                </a>
-                <a href="https://x.com/?lang=es" target="_blank" aria-label="X Twitter">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                </a>
-                <a href="https://web.whatsapp.com/" target="_blank" aria-label="WhatsApp">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-                        <path d="M12.031 0C5.405 0 .022 5.378.022 11.996c0 2.12.553 4.186 1.605 6.007L.041 24l6.155-1.609a11.936 11.936 0 005.835 1.516h.005c6.621 0 11.998-5.377 11.998-11.996 0-3.21-1.25-6.226-3.518-8.496A11.947 11.947 0 0012.031 0zm0 21.905h-.004c-1.785 0-3.535-.478-5.068-1.385l-.363-.214-3.766.984.998-3.665-.235-.373A9.957 9.957 0 012.025 12C2.025 6.486 6.516 2 12.031 2c2.673 0 5.185 1.042 7.075 2.932 1.89 1.89 2.93 4.4 2.93 7.068 0 5.513-4.49 10-10.005 10zm5.495-7.502c-.302-.151-1.784-.881-2.062-.982-.277-.101-.48-.151-.682.151-.202.302-.782.982-.958 1.183-.176.202-.353.227-.655.076-1.574-.789-2.738-1.464-3.8-3.25-.115-.195.006-.33.15-.472.26-.26.545-.636.655-.838.102-.201.051-.378-.025-.529-.076-.151-.682-1.644-.934-2.25-.246-.593-.496-.513-.682-.522l-.58-.009c-.202 0-.529.076-.807.378-.277.302-1.06 1.033-1.06 2.518s1.085 2.918 1.236 3.12c.151.202 2.128 3.25 5.155 4.553 1.895.815 2.553.882 3.42.744.976-.155 2.923-1.194 3.332-2.348.409-1.154.409-2.142.287-2.348-.122-.206-.43-.307-.732-.458z"/>
-                    </svg>
-                </a>
-            </div>
-            <p class="copyright">Todos los derechos reservados</p>
+<footer class="site-footer">
+    <div class="footer-content">
+        
+        <img src="images/LOGO EUREKA VECTOR.png" alt="Eureka Studio" class="footer-logo-img">
+        <div class="social-links">
+            
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.822a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z"/>
+                </svg>
+            </a>
+
+            <a href="https://x.com/?lang=es" target="_blank" aria-label="X Twitter">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+
+            <a href="https://web.whatsapp.com/" target="_blank" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                    <path d="M12.031 0C5.405 0 .022 5.378.022 11.996c0 2.12.553 4.186 1.605 6.007L.041 24l6.155-1.609a11.936 11.936 0 005.835 1.516h.005c6.621 0 11.998-5.377 11.998-11.996 0-3.21-1.25-6.226-3.518-8.496A11.947 11.947 0 0012.031 0zm0 21.905h-.004c-1.785 0-3.535-.478-5.068-1.385l-.363-.214-3.766.984.998-3.665-.235-.373A9.957 9.957 0 012.025 12C2.025 6.486 6.516 2 12.031 2c2.673 0 5.185 1.042 7.075 2.932 1.89 1.89 2.93 4.4 2.93 7.068 0 5.513-4.49 10-10.005 10zm5.495-7.502c-.302-.151-1.784-.881-2.062-.982-.277-.101-.48-.151-.682.151-.202.302-.782.982-.958 1.183-.176.202-.353.227-.655.076-1.574-.789-2.738-1.464-3.8-3.25-.115-.195.006-.33.15-.472.26-.26.545-.636.655-.838.102-.201.051-.378-.025-.529-.076-.151-.682-1.644-.934-2.25-.246-.593-.496-.513-.682-.522l-.58-.009c-.202 0-.529.076-.807.378-.277.302-1.06 1.033-1.06 2.518s1.085 2.918 1.236 3.12c.151.202 2.128 3.25 5.155 4.553 1.895.815 2.553.882 3.42.744.976-.155 2.923-1.194 3.332-2.348.409-1.154.409-2.142.287-2.348-.122-.206-.43-.307-.732-.458z"/>
+                </svg>
+            </a>
+            
         </div>
-    </footer>
+        
+        <p class="copyright">Todos los derechos reservados</p>
+    </div>
+</footer>
 
-    <div class="carrito-overlay" id="carritoOverlay"></div>
+<script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
 
-    <aside class="carrito-drawer" id="carritoDrawer">
-        <div class="carrito-header">
-            <h3>Tu Carrito</h3>
-            <button class="carrito-cerrar" id="carritoCerrar" aria-label="Cerrar carrito">✕</button>
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        toggle.classList.toggle('active');
+    });
+
+    // Cierra el menú al tocar un link
+    document.querySelectorAll('.main-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            toggle.classList.remove('active');
+        });
+    });
+</script>
+<div class="carrito-overlay" id="carritoOverlay"></div>
+
+<aside class="carrito-drawer" id="carritoDrawer">
+    <div class="carrito-header">
+        <h3>Tu Carrito</h3>
+        <button class="carrito-cerrar" id="carritoCerrar" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div class="carrito-lista" id="carritoLista"></div>
+
+    <div class="carrito-vacio" id="carritoVacio">
+        <div class="carrito-vacio-icono">🛒</div>
+        <p>Todavía no agregaste nada al carrito.</p>
+    </div>
+
+    <div class="carrito-footer" id="carritoFooter">
+        <div class="carrito-total-row">
+            <span class="carrito-total-label">Total</span>
+            <span class="carrito-total-precio" id="carritoTotal">$0</span>
         </div>
-        <div class="carrito-lista" id="carritoLista"></div>
-        <div class="carrito-vacio" id="carritoVacio">
-            <div class="carrito-vacio-icono">🛒</div>
-            <p>Todavía no agregaste nada al carrito.</p>
-        </div>
-        <div class="carrito-footer" id="carritoFooter">
-            <div class="carrito-total-row">
-                <span class="carrito-total-label">Total</span>
-                <span class="carrito-total-precio" id="carritoTotal">$0</span>
-            </div>
-            <a href="tienda.html?desde=carrito" class="carrito-btn-finalizar">FINALIZAR COMPRA</a>
-        </div>
-    </aside>
+        <a href="tienda.html?desde=carrito" class="carrito-btn-finalizar">FINALIZAR COMPRA</a>
+    </div>
+</aside>
 
- <script>
-        // Menú hamburguesa
-        const toggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('.main-nav');
-
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            toggle.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.main-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                toggle.classList.remove('active');
-            });
-        });
-
-        // Scroll suave para links internos con #
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                const href = link.getAttribute('href');
-                if (href === '#') return;
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    const offsetTop = target.getBoundingClientRect().top + window.scrollY - 80;
-                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Lee el ancla guardada en sessionStorage cuando venimos de otra página
-        window.addEventListener('load', () => {
-            const scrollTo = sessionStorage.getItem('scrollTo');
-            if (scrollTo) {
-                sessionStorage.removeItem('scrollTo');
-                const target = document.getElementById(scrollTo);
-                if (target) {
-                    setTimeout(() => {
-                        const offsetTop = target.getBoundingClientRect().top + window.scrollY - 80;
-                        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                    }, 200);
-                }
-            }
-        });
-    </script>
-    <script src="carrito.js"></script>
+<script src="carrito.js"></script>
+    <script src="animaciones.js"></script>
 </body>
 </html>
